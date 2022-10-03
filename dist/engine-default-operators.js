@@ -35,16 +35,25 @@ function numberValidator(factValue) {
   return Number.parseFloat(factValue).toString() !== 'NaN';
 }
 Operators.push(new _operator2.default('lessThan', function (a, b) {
-  return a < b;
+  return Number(a) < Number(b);
 }, numberValidator));
 Operators.push(new _operator2.default('lessThanInclusive', function (a, b) {
-  return a <= b;
+  return Number(a) <= Number(b);
+}, numberValidator));
+Operators.push(new _operator2.default('lesserThan', function (a, b) {
+  return Number(a) < Number(b);
+}, numberValidator));
+Operators.push(new _operator2.default('lesserThanOrEqualTo', function (a, b) {
+  return Number(a) < Number(b);
 }, numberValidator));
 Operators.push(new _operator2.default('greaterThan', function (a, b) {
-  return a > b;
+  return Number(a) > Number(b);
+}, numberValidator));
+Operators.push(new _operator2.default('greaterThanOrEqualTo', function (a, b) {
+  return Number(a) > Number(b);
 }, numberValidator));
 Operators.push(new _operator2.default('greaterThanInclusive', function (a, b) {
-  return a >= b;
+  return Number(a) >= Number(b);
 }, numberValidator));
 
 exports.default = Operators;
